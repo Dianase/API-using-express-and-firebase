@@ -4,7 +4,10 @@ const { getAllProducts } = require('./src/products')
 
 const app = express()
 
+app.get('/products/:productId', getProductById)
 app.get('/products', getAllProducts)
+
+
 
 exports.app = functions.https.onRequest(app)
 
